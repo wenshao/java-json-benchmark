@@ -14,6 +14,12 @@ targetCompatibility = 17
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
 }
 
 ext {
@@ -22,6 +28,7 @@ ext {
     dslJsonVersion = '1.10.0'
     johnzonVersion = '1.2.21'
     jmhVersion = '1.35'
+    fastjsonVersion = '2.0.50-SNAPSHOT'
 }
 
 dependencies {
@@ -45,8 +52,8 @@ dependencies {
     implementation group: 'com.dslplatform', name: 'dsl-json-java8', version: "${dslJsonVersion}"
     annotationProcessor group: 'com.dslplatform', name: 'dsl-json-java8', version: "${dslJsonVersion}"
     // FastJson
-    implementation group: 'com.alibaba.fastjson2', name: 'fastjson2', version: '2.0.48'
-    implementation group: 'com.alibaba.fastjson2', name: 'fastjson2-incubator-vector', version: '2.0.48'
+    implementation group: 'com.alibaba.fastjson2', name: 'fastjson2', version: "${fastjsonVersion}"
+    implementation group: 'com.alibaba.fastjson2', name: 'fastjson2-incubator-vector', version: "${fastjsonVersion}"
     // FlexJson
     implementation group: 'net.sf.flexjson', name: 'flexjson', version: '3.3'
     // GENSON
